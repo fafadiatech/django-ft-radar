@@ -20,6 +20,15 @@ This is a re-usable Job Aggregator written in Django
 
 ## Key Entities
 
+1. Category: Is a high level area by which we want to organize Leads. 
+1. Source: Self explainatory, which channel that lead came from
+1. Tag: Free form tag that we can associate with a lead
+1. LeadStatus: Generally this is `Open, Closed, Pending`. But keeping it configurable
+1. Lead: Details of a lead
+1. Industry: Sector with which that Lead is associated
+1. Company: Company associated with that Lead
+1. CompanyContact: A Contact associated with a Lead's Company
+
 ## Usage
 
 ## Worklog

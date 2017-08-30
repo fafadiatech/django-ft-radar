@@ -45,6 +45,33 @@ class Lead(RadarBaseModel):
     tags = models.ManyToManyField(Tag)
     blurb = models.TextField()
     rating = models.IntegerField()
+    opportunity = models.BooleanField()
+    def __unicode__(self):
+        return self.name
+
+class Industry(models.Model):
+    name = models.CharField(max_length=255)
 
     def __unicode__(self):
         return self.name
+
+class Company(RadarBaseModel):
+    name = models.CharField(max_length=255)
+    industry = models.ForeignKey(Industry)
+    website = models.URLField(blank=True, null=True, default=None)
+    linkedin = models.URLField(blank=True, null=True, default=None)
+    email = models.EmailField(blank=True, null=True, default=None)
+    phone = models.CharField(max_length=255, blank=True, null=True, default=None)
+
+    def __unicode__(self):
+        return self.name
+
+class CompanyContact(RadarBaseModel):
+    name = models.CharField(max_length=255)
+    works_at = models.ForeignKey(Company, related_name="works_at")
+    linkedin = models.URLField(blank=True, null=True, default=None)
+    email = models.EmailField(blank=True, null=True, default=None)
+    phone = models.CharField(max_length=255, blank=True, null=True, default=None)
+
+    def __unicode__(self):
+        return "%s > %s" % (self.works_at, self.name)
