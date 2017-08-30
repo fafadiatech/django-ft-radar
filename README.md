@@ -38,3 +38,5 @@ This is a re-usable Job Aggregator written in Django
 
 - Aug 30 2017
 	- First commit
+	- Integrated template, created DB models
+	- Created management command to load scrapy data
