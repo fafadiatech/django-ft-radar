@@ -14,7 +14,7 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
         ordering = ["weight"]
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -22,14 +22,14 @@ class Source(models.Model):
     name = models.CharField(max_length=255)
     url = models.URLField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
 class Tag(models.Model):
     name = models.CharField(max_length=255)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -39,7 +39,7 @@ class LeadStatus(models.Model):
     class Meta:
         verbose_name_plural = "Lead Status"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -57,7 +57,7 @@ class Lead(RadarBaseModel):
     class Meta:
         ordering = ["-created_at"]
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class Industry(models.Model):
@@ -66,7 +66,7 @@ class Industry(models.Model):
     class Meta:
         verbose_name_plural = "Industries"
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class Company(RadarBaseModel):
@@ -81,7 +81,7 @@ class Company(RadarBaseModel):
         verbose_name_plural = "Companies"
         ordering = ["name"]
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class CompanyContact(RadarBaseModel):
@@ -94,5 +94,5 @@ class CompanyContact(RadarBaseModel):
     class Meta:
         ordering = ["name"]
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s > %s" % (self.works_at, self.name)
