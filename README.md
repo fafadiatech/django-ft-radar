@@ -31,6 +31,9 @@ This is a re-usable Job Aggregator written in Django
 
 ## Usage
 
+### Management Commands
+
+1. `python manage.py ingest_scrapy_json --file=/Users/sidharth/Code/citadel/scrapy-ft-jobs-sites/scrapy_ft_jobs_sites/indeed.json` this is used to load JSON generated from Scrapy into application
 ## Worklog
 
 - Aug 30 2017
