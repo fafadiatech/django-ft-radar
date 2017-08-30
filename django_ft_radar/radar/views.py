@@ -29,3 +29,10 @@ class CompanyIndexView(BaseContextMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(CompanyIndexView, self).get_context_data(**kwargs)
         return context
+
+class SourceIndexView(BaseContextMixin, TemplateView):
+    template_name = "source_index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(SourceIndexView, self).get_context_data(**kwargs)
+        return context
