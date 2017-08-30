@@ -45,6 +45,7 @@ class LeadStatus(models.Model):
 
 class Lead(RadarBaseModel):
     title = models.CharField(max_length=255)
+    location = models.CharField(max_length=255, blank=True, null=True, default="")
     category = models.ForeignKey(Category)
     source = models.ForeignKey(Source)
     source_url = models.URLField()
