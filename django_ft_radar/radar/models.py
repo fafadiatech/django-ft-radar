@@ -49,10 +49,10 @@ class Lead(RadarBaseModel):
     source = models.ForeignKey(Source)
     source_url = models.URLField()
     status = models.ForeignKey(LeadStatus)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True, null=True, default=None)
     blurb = models.TextField()
-    rating = models.IntegerField()
-    opportunity = models.BooleanField()
+    rating = models.IntegerField(default=0)
+    opportunity = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["-created_at"]
